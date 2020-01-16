@@ -50,13 +50,18 @@ def gradientDescent(prices, kms):
         if(temp0 == theta0 and theta1 == temp1):
             break
     return theta0, theta1
-        
+
+def writeCSV(theta0, theta1):
+    df = pd.DataFrame({"theta0": [theta0], "theta1": [theta1]})
+    df.to_csv('theta.csv')
+
 
 if __name__ == '__main__':
     prices, kms = openCSV()
     theta0, theta1 = gradientDescent(prices, kms)
     theta0 = theta0 * max(prices)
     theta1 = theta1 * (max(prices)) / max(kms)
+    print(theta0, theta1)
     axes = plt.axes()
     axes.grid() # dessiner une grille pour une meilleur lisibilité du graphe
     plt.scatter(kms, prices) # X et Y sont les variables qu'on a extraite dans le paragraphe précédent
@@ -64,3 +69,4 @@ if __name__ == '__main__':
     plt.ylabel("Prix")
     plt.plot(kms, displayFunction(kms, theta0, theta1))
     plt.show()
+    writeCSV(theta0, theta1)
