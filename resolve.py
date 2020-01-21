@@ -6,7 +6,7 @@ def openCSV():
 
 def findPrice(theta0, theta1, km):
     price = km * theta1 + theta0
-    print(price)
+    print(price, "euros")
 
 def main():
     theta0, theta1 = openCSV()
