@@ -13,3 +13,4 @@ if __name__ == '__main__':
     plt.plot(X,Y, 'yo', X, poly1d_fn(X))
     plt.xlabel("Kilometrage")
     plt.ylabel("Prix")
+    plt.show()
