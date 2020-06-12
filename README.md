@@ -14,3 +14,5 @@ pip3 install -r requirements.txt
 ## Example
 
 ```python linear_regression.py data.csv```
+
+![Linear Function](https://github.com/bgeorges35/LinearRegression/blob/master/linear_function.png)
